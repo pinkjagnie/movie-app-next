@@ -16,7 +16,7 @@ const DUMMY_MOVIE = {
 function MovieContent() {
   return (
     <article className={styles.content}>
-      <MovieHeader title={DUMMY_MOVIE.title} image={DUMMY_MOVIE.image} />
+      <MovieHeader movie={DUMMY_MOVIE} />
       CONTENT
     </article>
   );
