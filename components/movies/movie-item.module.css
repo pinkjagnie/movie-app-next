@@ -1,0 +1,37 @@
+.movie {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  background-color: #343036;
+  text-align: center;
+}
+
+.movie a {
+  color: #dfdbe6;
+}
+
+.image {
+  width: 100%;
+  max-height: 20rem;
+  overflow: hidden;
+}
+
+.image img {
+  object-fit: cover;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.content h3 {
+  margin: 0.5rem 0;
+  font-size: 1.5rem;
+}
+
+.content time {
+  font-style: italic;
+  color: #a7a3ae;
+}
+
+.content p {
+  line-height: 1.5rem;
+}
