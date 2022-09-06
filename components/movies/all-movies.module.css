@@ -1,0 +1,17 @@
+.movies {
+  width: 90%;
+  max-width: 60rem;
+  margin: 2rem auto;
+}
+
+.movies h1 {
+  font-size: 2rem;
+  color: #343036;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .movies h1 {
+    font-size: 4rem;
+  }
+}

@@ -15,10 +15,13 @@ function MainNavigation() {
       <nav>
         <ul>
           <li>
-            <Link href="/search">Search movie</Link>
+            <Link href="/movies">See all</Link>
           </li>
           <li>
-            <Link href="/addMovie">Add movie</Link>
+            <Link href="/search">Search</Link>
+          </li>
+          <li>
+            <Link href="/add">Add</Link>
           </li>
         </ul>
       </nav>
