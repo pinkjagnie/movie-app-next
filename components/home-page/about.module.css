@@ -1,0 +1,28 @@
+.about {
+  text-align: center;
+  background-image: linear-gradient(
+    to bottom,
+    #221f23,
+    #343036
+  );
+  padding: 2rem 0;
+}
+
+.about h1,
+.about h2 {
+  font-size: 4rem;
+  margin: 1rem 0;
+  color: #a7a3ae;
+}
+
+.about h2 {
+  font-size: 2rem;
+}
+
+.about p {
+  font-size: 1.5rem;
+  color: #b2adb8;
+  width: 90%;
+  max-width: 40rem;
+  margin: auto;
+}

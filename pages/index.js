@@ -1,5 +1,13 @@
+import About from "../components/home-page/about";
+import FeaturedMovies from "../components/home-page/featured-movies";
+
 function HomePage() {
-  return <h1>Hello</h1>;
+  return(
+    <>
+      <About />
+      <FeaturedMovies />
+    </>
+  )
 }
 
 export default HomePage;
