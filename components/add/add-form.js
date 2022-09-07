@@ -15,7 +15,7 @@ function AddForm() {
             <input type="text" id="year" required />
           </div>
           <div className={styles.control}>
-            <label htmlFor="time">Time (in the form of _h _min)</label>
+            <label htmlFor="time">Time (e.g. 2h 10min)</label>
             <input type="text" id="time" required />
           </div>
           <div className={styles.control}>

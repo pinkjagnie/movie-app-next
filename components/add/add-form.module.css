@@ -4,6 +4,7 @@
   background-color: #dfdbe6;
   width: 90%;
   max-width: 50rem;
+  /* height: 70vh; */
   padding: 1rem;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
   font-size: 1.5rem;
@@ -12,7 +13,7 @@
 .add h1 {
   font-size: 2rem;
   margin: 1rem 0;
-  text-align: left;
+  text-align: center;
 }
 
 .form label {
@@ -22,8 +23,7 @@
   margin: 0.5rem 0 0.25rem 0;
 }
 
-.form input,
-.form textarea {
+.form input {
   font: inherit;
   padding: 0.25rem;
   border-radius: 4px;
@@ -41,7 +41,7 @@
 
 .control {
   flex: 1;
-  min-width: 10rem;
+  min-width: 25rem;
 }
 
 .actions {
