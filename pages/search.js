@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import MovieItem from '../components/movies/movie-item';
+import addMoviePage from './addMovie';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faClose } from '@fortawesome/free-solid-svg-icons';
@@ -55,7 +56,7 @@ function SearchPage() {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
   const [data, setData] = useState([]);
-  const [addSingleApp, setAddSingleApp] = useState(false);
+  const [addSingleMovie, setAddSingleMovie] = useState(false);
 
   // async function fetchReports() {
   //   const response = await fetch('url', {
@@ -85,10 +86,12 @@ function SearchPage() {
 
     if (searchWord === "") {
       setFilteredData([]);
-      setAddSingleApp(false);
+      setAddSingleMovie(false);
+    } if (searchWord.trim() != "" && filteredData.length === 0) {
+      setAddSingleMovie(true);
     } else {
       setFilteredData(newFilter);
-      setAddSingleApp(true);
+      // setAddSingleApp(true);
     }
   };
 
@@ -98,11 +101,19 @@ function SearchPage() {
     setAddSingleApp(false);
   };
 
+  const addMovie = <div className={styles.linkContainer}>
+      <p>Did not find what you are looking for?</p>
+      <Link href="/add"><a><p className={styles.link}>Add movie to our database</p></a></Link>
+    </div>;
+
 
   return(
     <div className={styles.searchSection}>
       <div className={styles.sloganSection}>
         <h3>Find your favorite movie in our database</h3>
+      </div>
+      <div>
+        {addSingleMovie ? addMovie : undefined}
       </div>
       <div className={styles.searchBox}>
         <input type="text" placeholder="Type to search..." autoFocus className={styles.searchInput} value={wordEntered} onChange={handleFilter}/>
