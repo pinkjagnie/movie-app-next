@@ -26,7 +26,9 @@ async function handler(req, res) {
       return;
     }
 
-    const newMovie = {title, year, image, time, director, writer, production, isFeatured: false};
+    let slug = title.replaceAll(" ","-").toLowerCase();
+
+    const newMovie = {title, year, image, time, director, writer, production, slug, isFeatured: false};
 
     console.log(newMovie);
 
