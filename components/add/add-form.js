@@ -5,6 +5,7 @@ import styles from "./add-form.module.css";
 function AddForm() {
   const titleRef = useRef();
   const yearRef = useRef();
+  const imageRef = useRef();
   const timeRef = useRef();
   const directorRef = useRef();
   const writerRef = useRef();
@@ -15,12 +16,13 @@ function AddForm() {
 
     const enteredTitle = titleRef.current.value;
     const enteredYear = yearRef.current.value;
+    const enteredImage = imageRef.current.value;
     const enteredTime = timeRef.current.value;
     const enteredDirector = directorRef.current.value;
     const enteredWriter = writerRef.current.value;
     const enteredProduction = productionRef.current.value;
 
-    console.log(enteredTitle, enteredYear, enteredTime, enteredDirector, enteredWriter, enteredProduction)
+    console.log(enteredTitle, enteredYear, enteredImage, enteredTime, enteredDirector, enteredWriter, enteredProduction)
   }
 
   return (
@@ -35,6 +37,10 @@ function AddForm() {
           <div className={styles.control}>
             <label htmlFor="year">Year of production</label>
             <input type="text" id="year" required ref={yearRef}/>
+          </div>
+          <div className={styles.control}>
+            <label htmlFor="image">Poster (url)</label>
+            <input type="url" id="image" required ref={imageRef}/>
           </div>
           <div className={styles.control}>
             <label htmlFor="time">Time (e.g. 2h 10min)</label>
