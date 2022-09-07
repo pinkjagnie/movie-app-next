@@ -39,6 +39,14 @@ function AddForm() {
         "Content-Type": "application/json",
       },
     });
+
+    titleRef.current.value = "";
+    yearRef.current.value = "";
+    imageRef.current.value = "";
+    timeRef.current.value = "";
+    directorRef.current.value = "";
+    writerRef.current.value = "";
+    productionRef.current.value = ""
   }
 
   return (
