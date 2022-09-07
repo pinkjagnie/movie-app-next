@@ -23,6 +23,22 @@ function AddForm() {
     const enteredProduction = productionRef.current.value;
 
     console.log(enteredTitle, enteredYear, enteredImage, enteredTime, enteredDirector, enteredWriter, enteredProduction)
+
+    fetch("/api/add", {
+      method: "POST",
+      body: JSON.stringify({
+        title: enteredTitle, 
+        year: enteredYear, 
+        image: enteredImage, 
+        time: enteredTime, 
+        director: enteredDirector, 
+        writer: enteredWriter, 
+        production: enteredProduction
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
   }
 
   return (
