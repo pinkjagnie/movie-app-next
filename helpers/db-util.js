@@ -3,7 +3,7 @@ import config from "../lib/config";
 
 export async function connectDatabase() {
   const client = await MongoClient.connect(`${config.urlMongo}`);
-  // console.log(client)
+
   return client;
 }
 
