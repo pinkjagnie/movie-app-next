@@ -26,7 +26,7 @@ async function handler(req, res) {
       return;
     }
 
-    let slug = title.replaceAll(" ","-").toLowerCase();
+    let slug = title.replaceAll(" ","-").replace(":", "-").toLowerCase() + '-' + year;
 
     const newMovie = {title, year, image, time, director, writer, production, slug, isFeatured: false};
 
