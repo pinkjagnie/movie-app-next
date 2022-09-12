@@ -24,6 +24,8 @@ function SearchPage(props) {
     //setFilteredData(newFilter);
 
     if (searchWord === "") {
+      console.log("PUSTO")
+      setWordEntered("");
       setFilteredData([]);
       setAddSingleMovie(false);
     } if (searchWord.trim() != "" && filteredData.length === 0) {
@@ -77,7 +79,7 @@ function SearchPage(props) {
 export default SearchPage;
 
 export async function getServerSideProps() {
-
+  console.log("------------------")
   let res = await fetch("http://localhost:3000/api/movies", {
     headers: {
       "Content-Type": "application/json",

@@ -1,0 +1,9 @@
+input.radio {
+  display: none;
+}
+  
+.star {
+  font-size: 3rem;
+  cursor: pointer;
+  transition: color 200ms
+}
