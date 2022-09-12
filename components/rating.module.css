@@ -1,3 +1,12 @@
+.rating h1 {
+  font-size: 2rem;
+  color: #5a097a;
+  margin: 0;
+  line-height: initial;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
 input.radio {
   display: none;
 }
@@ -6,4 +15,32 @@ input.radio {
   font-size: 3rem;
   cursor: pointer;
   transition: color 200ms
+}
+
+.overallStar {
+  display: flex;
+}
+
+.overallStar p:nth-last-child(1) {
+  margin-top: 1rem;
+  padding-left: 0.5rem;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #5a097a;
+}
+
+@media (min-width: 768px) {
+  .rating h1 {
+    font-size: 3rem;
+    text-align: left;
+  }
+
+  .ratingBox {
+    display: flex;
+    width: 80%;
+  }
+
+  .yourRating {
+    flex-grow: 1;
+  }
 }

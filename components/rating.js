@@ -10,17 +10,30 @@ const StarRating = () => {
   const [hover, setHover] = useState(null);
   
   return (
-    <div>
-        {[...Array(5)].map((star, i) => {
-      const ratingValue = i + 1;
+    <div className={styles.rating}>
+      <h1>Rating</h1>
+      <div className={styles.ratingBox}>
+        <div className={styles.yourRating}>
+          <p>Your rating</p>
+          {[...Array(5)].map((star, i) => {
+          const ratingValue = i + 1;
   
-      return (
-        <label key={i}>
-          <input className={styles.radio} type="radio" name="rating" value={ratingValue} onClick={() => setRating(ratingValue)} />
-          <FontAwesomeIcon icon={faStar} className={styles.star} color={ratingValue <= (hover || rating) ? "#ffc107" : "#aaa"} onMouseEnter={() => setHover(ratingValue)} onMouseLeave={() => setHover(null)}/>
-        </label>
-      )
-      })}
+          return (
+            <label key={i}>
+              <input className={styles.radio} type="radio" name="rating" value={ratingValue} onClick={() => setRating(ratingValue)} />
+              <FontAwesomeIcon icon={faStar} className={styles.star} color={ratingValue <= (hover || rating) ? "#ffc107" : "#aaa"} onMouseEnter={() => setHover(ratingValue)} onMouseLeave={() => setHover(null)}/>
+            </label>
+          )
+          })}
+        </div>
+        <div className={styles.overallRating}>
+          <p>Overall rating</p>
+          <div className={styles.overallStar}>
+            <FontAwesomeIcon icon={faStar} className={styles.star} color={"#5a097a"} />
+            <p>5.0</p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 };
