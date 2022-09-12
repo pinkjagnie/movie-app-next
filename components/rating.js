@@ -5,6 +5,10 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./rating.module.css";
 
+const DUMMY_NOTE = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1];
+
+let overallStar = (DUMMY_NOTE.reduce((a, b) => a + b, 0) / DUMMY_NOTE.length).toFixed(1);
+
 const StarRating = () => {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
@@ -30,7 +34,7 @@ const StarRating = () => {
           <p>Overall rating</p>
           <div className={styles.overallStar}>
             <FontAwesomeIcon icon={faStar} className={styles.star} color={"#5a097a"} />
-            <p>5.0</p>
+            <p>{overallStar}</p>
           </div>
         </div>
       </div>
