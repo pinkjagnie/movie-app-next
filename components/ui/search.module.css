@@ -118,6 +118,8 @@
   top: calc(30vh + 55px);
   border: 1px solid #181818;
   border-radius: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .dataResult::-webkit-scrollbar {
@@ -126,10 +128,12 @@
 
 .dataResult .dataItem {
   width: 50%;
-  height: 55vh;
+  height: 60vh;
   /* display: flex;
   align-items: center; */
   padding: 0.5rem;
+  margin-top: 1rem;
+  /* overflow: hidden; */
   /* color: black; */
 }
 
