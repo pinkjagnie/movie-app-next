@@ -5,14 +5,31 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "./rating.module.css";
 
-const DUMMY_NOTE = [1, 2, 3, 4, 5, 5, 4, 3, 2, 1];
-
-let overallStar = (DUMMY_NOTE.reduce((a, b) => a + b, 0) / DUMMY_NOTE.length).toFixed(1);
-
-const StarRating = () => {
+const StarRating = (props) => {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   
+  let overallStar = (props.movie.rates.reduce((a, b) => a + b, 0) / props.movie.rates.length).toFixed(1);
+
+  const addRateHandler = (event, ratingValue) => {
+    event.preventDefault();
+
+    setRating(ratingValue);
+
+    let newRate = event.target.value;
+
+    fetch("/api/movies", {
+      method: "POST",
+      body: JSON.stringify({
+        rate: newRate,
+        slug: props.movie.slug
+      }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+  }
+
   return (
     <div className={styles.rating}>
       <h1>Rating</h1>
@@ -24,7 +41,7 @@ const StarRating = () => {
   
           return (
             <label key={i}>
-              <input className={styles.radio} type="radio" name="rating" value={ratingValue} onClick={() => setRating(ratingValue)} />
+              <input className={styles.radio} type="radio" name="rating" value={ratingValue} onClick={addRateHandler} />
               <FontAwesomeIcon icon={faStar} className={styles.star} color={ratingValue <= (hover || rating) ? "#ffc107" : "#aaa"} onMouseEnter={() => setHover(ratingValue)} onMouseLeave={() => setHover(null)}/>
             </label>
           )

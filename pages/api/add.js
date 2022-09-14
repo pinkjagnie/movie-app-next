@@ -30,8 +30,6 @@ async function handler(req, res) {
 
     const newMovie = {title, year, image, time, director, writer, production, slug, isFeatured: false};
 
-    console.log(newMovie);
-
     let client;
 
     try {

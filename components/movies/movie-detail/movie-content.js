@@ -7,7 +7,7 @@ function MovieContent(props) {
   return (
     <article className={styles.content}>
       <MovieHeader movie={props.movie} />
-      <StarRating />
+      <StarRating movie={props.movie}/>
     </article>
   );
 }
